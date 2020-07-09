@@ -1,19 +1,62 @@
 <?xml version="1.0"?>
 <configuration>
-<property>
-    <name>system:user.name</name>
-    <value>usrname</value>
-</property>
-<property>
-    <name>system:java.io.tmpdir</name>
-    <value>/tmp/</value>
-</property>
-<property>
-    <name>javax.jdo.option.ConnectionURL</name>
-    <value>jdbc:derby:/usr/local/hive/metastore_db;databaseName=metastore_db;create=true</value>
-</property>
-<property>
-  <name>hive.aux.jars.path</name>
-  <value>/usr/local/hive/lib/elasticsearch-hadoop-7.0.0.jar</value>
-</property>
+
+    <property>
+        <name>hive.metastore.warehouse.dir</name>
+        <value>/hive/warehouse</value>
+    </property>
+
+    <property>
+        <name>system:java.io.tmpdir</name>
+        <value>/tmp/</value>
+    </property>
+
+    <property>
+        <name>javax.jdo.option.ConnectionURL</name>
+        <value>jdbc:mysql://localhost:3306/hivedb?createDatabaseIfNotExist=true&amp;useSSL=false</value>
+        <description>metadata is stored in a MySQL server</description>
+    </property>
+
+    <property>
+        <name>javax.jdo.option.ConnectionDriverName</name>
+        <value>com.mysql.jdbc.Driver</value>
+        <description>MySQL JDBC driver class</description>
+    </property>
+
+    <property>
+        <name>javax.jdo.option.ConnectionUserName</name>
+        <value>hiveuser</value>
+        <description>user name for connecting to mysql server</description>
+    </property>
+
+    <property>
+        <name>javax.jdo.option.ConnectionPassword</name>
+        <value>hivepassword</value>
+        <description>password for connecting to mysql server</description>
+    </property>
+
+    <property>
+        <name>hive.server2.thrift.port</name>
+        <value>10000</value>
+    </property>
+
+    <property>
+        <name>hive.server2.enable.doAs</name>
+        <value>true</value>
+    </property>
+
+    <property>
+        <name>hive.execution.engine</name>
+        <value>tez</value>
+    </property>
+
+    <property>
+        <name>hive.metastore.port</name>
+        <value>9083</value>
+    </property>
+
+    <property>
+        <name>mapreduce.input.fileinputformat.input.dir.recursive</name>
+        <value>true</value>
+    </property>
 </configuration>

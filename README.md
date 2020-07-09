@@ -1,6 +1,10 @@
 community-pricing-project
 --------
 
+```$xslt
+git@github.com:krithikabalu/CommunityPricingProject.git
+```
+
 **Prerequisites**
 - Install **pipenv** - `pip install pipenv` (need only once, takes few minutes)
 - ```python3 -m venv venv && source venv/bin/activate && pipenv install```
